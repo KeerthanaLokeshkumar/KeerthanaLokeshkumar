@@ -1,0 +1,25 @@
+package project;
+import java.util.Scanner;
+
+public class Split {
+	private static String toBeSplitted;
+
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the string:");
+		String str = sc.nextLine();
+		String str1 = sc.nextLine();
+		String[] result = mySplit(str,str1);
+		for(String s:result)
+		{
+			System.out.println(s);
+		}
+		
+	}
+
+	public static String[] mySplit(String str, String str1) {
+		String[] arrOfStr = toBeSplitted.split(str1);
+		// TODO Auto-generated method stub
+		return arrOfStr;
+	}
+}
