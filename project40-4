@@ -1,0 +1,60 @@
+package project40;
+
+public class Methods1 {
+
+		public int multipynumbers(int a,int b) {
+			int c=a*b;
+			return c;
+		}
+
+		public static void main(String[] args) {
+
+			Methods1 m= new Methods1();
+			int output= m.multipynumbers(10,3);
+			System.out.println("Multipilcation is :"+output);
+			}
+
+		public class callMethod {
+
+		int val=150;
+
+		int operation(int val) {
+			val =val*10/100;
+			return(val);
+		}
+
+		public void main(String args[]) {
+			callMethod cm = new callMethod();
+			System.out.println("Before operation value of data is "+cm.val);
+			cm.operation(100);
+			System.out.println("After operation value of data is "+cm.val);
+			}
+		}
+		
+
+
+
+
+		public  class overloadMethod {
+			
+		public void area(int b,int h) {
+		         System.out.println("Area of Triangle : "+(0.5*b*h));
+		}
+		    
+		    public void area(int r) {
+		         System.out.println("Area of Circle : "+(3.14*r*r));
+		    }
+
+		    public void main(String args[])
+		   {
+
+		overloadMethod ob=new overloadMethod();
+		       ob.area(10,12);
+		       ob.area(5);  
+		   }
+		}
+}
+
+
+
+
