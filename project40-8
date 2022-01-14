@@ -1,0 +1,69 @@
+package project40;
+
+public class InnerClass {
+
+		 private String msg="Welcome to Java"; 
+		 
+		 class Inner{  
+		  void hello(){System.out.println(msg+", Let us start learning Inner Classes");}  
+		 }  
+
+
+		public static void main(String[] args) {
+
+			InnerClass ic= new InnerClass();
+			InnerClass.Inner in= ic.new Inner();  
+			in.hello();  
+		}
+	}
+
+
+ class InnerClass2 {
+
+	private String msg="Inner Classes";
+
+	 void display(){  
+		 class Inner{  
+			 void msg(){
+				 System.out.println(msg);
+			 }  
+	  }  
+	  
+	  Inner i =new Inner();  
+	  i.msg();  
+	 }  
+
+	 
+	public static void main(String[] args) {
+		InnerClass2  ob=new InnerClass2 ();  
+		ob.display();  
+		}
+	}
+
+	
+	abstract class AnonymousInnerClass {
+		   public abstract void display();
+		}
+
+
+		 class InnerClass3 {
+
+		public static void main(String[] args) {
+		AnonymousInnerClass a = new AnonymousInnerClass() {
+
+		         public void display() {
+		            System.out.println("Anonymous Inner Class");
+		         }
+		      };
+		      a.display();
+		   }
+		}
+
+
+
+
+
+
+
+
+
