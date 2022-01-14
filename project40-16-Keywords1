@@ -1,0 +1,26 @@
+package project40;
+
+public class Keywords1 {
+        void Division() throws ArithmeticException
+        {
+            int a=60,b=0,r;
+r = a / b;
+            System.out.print("The result is : " + r);
+        }
+         public static void main(String[] args)
+        {
+Keywords1 k = new Keywords1();
+             try
+            {
+                k.Division();
+            }
+            catch(ArithmeticException Ex)
+            {
+                System.out.print("\nError : " + Ex.getMessage());
+            }
+            System.out.print("\n\tEnd");
+        }
+    }
+
+
+
