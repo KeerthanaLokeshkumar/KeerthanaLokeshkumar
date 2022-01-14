@@ -1,0 +1,17 @@
+package project40;
+
+public class Threads extends Thread{
+	
+
+	 	public void run()
+	 	{
+	  		System.out.println("concurrent thread started running..");
+	}
+	 	public static void main( String args[] )
+	 	{
+	  		Thread t = new  Threads();
+	  		t.start();
+	 	}
+	}
+
+
