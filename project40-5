@@ -1,0 +1,54 @@
+package project40;
+
+public class Constructors {
+		int id;
+		String name;
+	
+
+	void display() {
+		System.out.println(id+" "+name);
+		}
+	}
+
+	 class ConstructorsDemo {
+
+	public static void main(String[] args) {
+
+		Constructors emp1=new Constructors();
+		Constructors emp2=new Constructors();
+
+		emp1.display();
+		emp2.display();
+		}
+	}
+
+
+	class Std{
+		int id;
+		String name;
+
+		Std(int i,String n)
+		{
+		id=i;
+		name=n;
+		}
+
+		void display() {
+		System.out.println(id+" "+name);
+		}
+	}
+
+	 class parameterizedConstrsuctorDemo {
+	public static void main(String[] args) {
+
+		Std std1=new Std(2,"Alex");
+		Std std2=new Std(10,"Annie");
+		std1.display();
+		std2.display();
+			}
+	}
+
+
+
+
+
