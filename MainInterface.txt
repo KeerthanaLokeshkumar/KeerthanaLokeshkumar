@@ -1,0 +1,20 @@
+package com.assesment.phase;
+
+public class MainInterface {
+
+	public static void main(String[] args) {
+		
+			
+		
+				BusinessOperations.create_MainFolder_IfNot_Present("main");
+				
+
+				
+				MenuOptions.welcome_Screen("Keerthana Lokeshkumar", null);
+				
+			
+				OperationMenu.welcome_Screen_Inputs();
+		
+	}
+
+}

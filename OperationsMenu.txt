@@ -1,0 +1,113 @@
+package com.assesment.phase;
+import java.util.Scanner;
+import java.util.List;
+
+public class OperationMenu {
+		public static void welcome_Screen_Inputs() {
+			boolean running = true;
+			Scanner sc = new Scanner(System.in);
+			do {
+				try {
+					MenuOptions.display_Main_Menu();
+					int input = sc.nextInt();
+
+					switch (input) {
+					case 1:
+						BusinessOperations.display_Files("main");
+						break;
+					case 2:
+						OperationMenu.menu_Operation_Handling();
+						break;
+					case 3:
+						System.out.println("Program exited");
+						running = false;
+						sc.close();
+						System.exit(0);
+						break;
+					default:
+						System.out.println("select a valid option ");
+					}
+				} catch (Exception e) {
+					System.out.println(e.getClass().getName());
+					welcome_Screen_Inputs();
+				} 
+			} while (running == true);
+		}
+		
+		public static void menu_Operation_Handling() {
+			boolean running = true;
+			Scanner sc = new Scanner(System.in);
+			do {
+				try {
+					MenuOptions.display_File_Menu();
+					BusinessOperations.create_MainFolder_IfNot_Present("main");
+					
+					int input = sc.nextInt();
+					switch (input) {
+					case 1:
+						
+						System.out.println("Enter the filename \"main\" folder");
+						String fileToAdd = sc.next();
+						
+						BusinessOperations.create_User_Defined_File(fileToAdd, sc);
+						
+						break;
+					case 2:
+						
+						System.out.println("Enter the filename for deletion from \"main\" folder");
+						String fileToDelete = sc.next();
+						
+						BusinessOperations.create_MainFolder_IfNot_Present("main");
+						List<String> filesToDelete = BusinessOperations.display_File_Locations(fileToDelete, "main");
+						
+						String deletionPrompt = "\nSelect index to delete?"
+								+ "\n(Enter 0 if you want to delete all elements)";
+						System.out.println(deletionPrompt);
+					
+						int idx = sc.nextInt();
+						
+						if (idx != 0) {
+							BusinessOperations.delete_User_Defined_Files(filesToDelete.get(idx - 1));
+						} else {
+							
+						
+							for (String path : filesToDelete) {
+								BusinessOperations.delete_User_Defined_Files(path);
+							
+						}
+						
+
+						break;
+						}
+					case 3:
+					
+						System.out.println("Enter the filename for searching from \"main\" folder");
+						String fileName = sc.next();
+						
+						BusinessOperations.create_MainFolder_IfNot_Present("main");
+						BusinessOperations.display_File_Locations(fileName, "main");
+
+						
+						break;
+					case 4:
+				
+						return;
+					case 5:
+					
+						System.out.println("Program exited");
+						running = false;
+						sc.close();
+						System.exit(0);
+					default:
+						System.out.println("Select a value");
+					}
+				} catch (Exception e) {
+					System.out.println(e.getClass().getName());
+					menu_Operation_Handling();
+				}
+			} while (running == true);
+		}
+
+	}
+
+
